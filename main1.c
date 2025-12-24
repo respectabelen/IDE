@@ -72,6 +72,7 @@ int max(int *pm, int rows, int cols) {
     return max1;
 }
 */
+/*
 void fill(int *, int, int);
 void print(int *, int, int);
 int sum2(int *, int, int);
@@ -143,4 +144,45 @@ int sum3(int *pm, int rows, int cols, int c) {
         sum += x * x;
     }
     return sum;
+}
+*/
+
+void fill(int *, int);
+void print(int *, int);
+int count(int *, int);
+
+int main() {
+
+int k; int A[m];
+
+srand(time(NULL));
+
+fill(A,m);
+print(A,m);
+k = count(A,m);
+
+printf("\n кол во отрицательных элементов = %i", k);
+}
+
+void fill (int *pm, int n) {
+int *p;
+for(p = pm; p < pm + n; p++)
+   *p = rand() %100 - 50;
+}
+
+void print (int *pm, int n) {
+int *p;
+for(p = pm; p < pm + n; p++)
+printf("%i\t", *p);
+}
+
+int count(int *pm, int n) {
+int k = 0;
+int *p;
+for(p = pm; p < pm + n; p++)
+   {
+      if (*p < 0)
+      k++;
+   }
+   return k;
 }
