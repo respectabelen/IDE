@@ -187,6 +187,7 @@ for(p = pm; p < pm + n; p++)
    return k;
 }
 */
+/*
 {
    int A[n][m], i, j, sum1, sum2;
 
@@ -219,3 +220,4 @@ for(p = pm; p < pm + n; p++)
    if (sum1 < sum2)
       printf("\n На побочной диагонали сумма больше");
 }
+*/
