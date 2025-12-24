@@ -146,7 +146,7 @@ int sum3(int *pm, int rows, int cols, int c) {
     return sum;
 }
 */
-
+/*
 void fill(int *, int);
 void print(int *, int);
 int count(int *, int);
@@ -185,4 +185,37 @@ for(p = pm; p < pm + n; p++)
       k++;
    }
    return k;
+}
+*/
+{
+   int A[n][m], i, j, sum1, sum2;
+
+   sum1 = 0;
+   sum2 = 0;
+
+  srand(time(NULL));
+
+   for (i = 0; i < n; i++)
+      {
+         printf("\n");
+         for (j = 0; j < m; j++)
+         {  
+            A[i][j] = rand() % 100 - 50;
+            printf("%5i", A[i][j]);
+         }
+      }
+
+   for (i = 0; i < n; i++)
+      {
+            if (A[i][i] % 4 == 0) { sum1 += A[i][i]; }
+
+            if (A[i][n-1-i] % 4 == 0) { sum2 += A[i][n-1-i]; }
+      }  
+   printf ("\n Сумма: главная диагональ = %i, побочная = %i", sum1, sum2);
+
+   if (sum1 > sum2)
+      printf("\n На главной диагонали сумма больше");
+   
+   if (sum1 < sum2)
+      printf("\n На побочной диагонали сумма больше");
 }
